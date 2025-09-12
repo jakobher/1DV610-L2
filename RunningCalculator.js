@@ -3,8 +3,16 @@
 class RunningCalculator {
 
     // Beräkna pace: tid/distans
+    calculatePace(distance, time) {
+        let result = time / distance
+        return result
+    }
 
     // Konvertera pace till hastighet (km/h)
+    paceToSpeed(pace) {
+        let result = 60 / pace
+        return result
+    }
 
     // Beräkna tid från distans och pace
 
@@ -13,3 +21,4 @@ class RunningCalculator {
     // Beräkna pulszoner från maxpuls
 }
 
+export default RunningCalculator;
