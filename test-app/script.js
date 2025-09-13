@@ -14,3 +14,14 @@ let mySpeed = calc.paceToSpeed(myPace) // Pace calculated by previous test
 let mySpeed2 = calc.paceToSpeed(6) // 6 min/km
 console.log(`5 min/km: ${mySpeed} km/h`)
 console.log(`6 min/km: ${mySpeed2} km/h`)
+
+// Test for calculateTime
+console.log('--- Testing calculateTime ---')
+let myTime = calc.calculateTime(5, 5)
+console.log(`5km with a pace at 5 min/km takes ${myTime} minutes`)
+
+
+// Test for calculateDistance
+console.log('--- Testing calculateDistance ---')
+let myDistance = calc.calculateDistance(25, 5)
+console.log(`25min with 5 pace takes you ${myDistance}km`)
