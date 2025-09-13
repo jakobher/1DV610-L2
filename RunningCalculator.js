@@ -27,6 +27,20 @@ class RunningCalculator {
     }
 
     // Beräkna pulszoner från maxpuls
+    calculatePulseZones(gender, age) {
+        let maxPulse = gender - age
+        if (gender === 'male') {
+            maxPulse = 220 - age
+        } else if (gender === 'female') {
+            maxPulse = 226 - age
+        } else {
+            console.log('Invalid input')
+        }
+
+        return maxPulse
+
+        // TODO: Implement logic to calculate pulseZones
+    }
 }
 
 export default RunningCalculator;
