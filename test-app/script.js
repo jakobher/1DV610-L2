@@ -82,3 +82,13 @@ console.log('--- Testing predictRaceTime ---')
 let predictedTime = calc.predictRaceTime(3, 18, 5)
 let formatTime = calc.formatTime(predictedTime)
 console.log('Predicted race time for 5km with a known time of 18min for 3km: ' + formatTime)
+
+// Testa annan distans  
+let predictedMarathon = calc.predictRaceTime(10, 45, 42.2)
+console.log('Marathon prediction:', calc.formatTime(predictedMarathon))
+
+// Testa else-fallet
+let predicted7K = calc.predictRaceTime(5, 25, 7)
+console.log('7K prediction (using standard formula):', calc.formatTime(predicted7K))
+
+
