@@ -26,6 +26,12 @@ class RunningCalculator {
         return result
     }
 
+    formatTime(decimalMinutes) {
+        const minutes = Math.floor(decimalMinutes);
+        const seconds = Math.round((decimalMinutes - minutes) * 60);
+        return `${minutes} min ${seconds} sec`;
+    }
+
 
     // Calculate max pulse based on gender and age
     calculateMaxPulse(gender, age) {
@@ -79,6 +85,16 @@ class RunningCalculator {
             summary: `Complete pulse profile for a ${age}-year-old ${gender}`
         }
     }
+
+    // Predict race time for 5 km based on known distance and time with Riegel's formula
+    predictRaceTime(knownDistance, knownTime, targetDistance) {
+        let predictedTime = 0
+        if (targetDistance) {
+            predictedTime = knownTime * (targetDistance / knownDistance) ** 1.06
+        }
+        return predictedTime
+}
+
 }
 
 export default RunningCalculator;
