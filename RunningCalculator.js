@@ -2,32 +2,32 @@
 
 class RunningCalculator {
 
-    // Beräkna pace: tid/distans
+    // Calculate pace: time/distance
     calculatePace(distance, time) {
         const result = time / distance
         return result
     }
 
-    // Konvertera pace till hastighet (km/h)
+    // Convert pace (min/km) to speed (km/h)
     paceToSpeed(pace) {
         const result = 60 / pace
         return result
     }
 
-    // Beräkna tid från distans och pace
+    // Calculate time from distance and pace
     calculateTime(distance, pace) {
         const result = distance * pace
         return result
     }
 
-    // Beräkna distans från tid och pace 
+    // Calculate distance from time and pace 
     calculateDistance(time, pace) {
         const result = time / pace
         return result
     }
 
 
-    // Beräkna maxpuls baserat på kön och ålder
+    // Calculate max pulse based on gender and age
     calculateMaxPulse(gender, age) {
         let maxPulse = 0
         if (gender === 'male') {
@@ -40,7 +40,7 @@ class RunningCalculator {
         return maxPulse
     }
 
-    // Beräkna pulszoner från maxpuls
+    // Calculate pulse zones based on max pulse
     calculatePulseZones(gender, age) {
         let maxPulse = this.calculateMaxPulse(gender, age)
 
@@ -50,6 +50,33 @@ class RunningCalculator {
             zone3: { min: Math.round(maxPulse * 0.7), max: Math.round(maxPulse * 0.8) },
             zone4: { min: Math.round(maxPulse * 0.8), max: Math.round(maxPulse * 0.9) },
             zone5: { min: Math.round(maxPulse * 0.9), max: maxPulse }
+        }
+    }
+
+    // Describe pulse zones
+    describePulseZones() {
+        return {
+            zone1: "Very light activity, helps with recovery.",
+            zone2: "Light activity, improves basic endurance and fat burning.",
+            zone3: "Moderate activity, enhances aerobic fitness.",
+            zone4: "Hard activity, increases maximum performance capacity.",
+            zone5: "Maximum effort, improves speed and power."
+        }
+    }
+
+    // Analyze pulse profile
+    analyzePulseProfile(gender, age) {
+        const maxPulse = this.calculateMaxPulse(gender, age);
+        const zones = this.calculatePulseZones(gender, age);
+        const descriptions = this.describePulseZones();
+
+        return {
+            gender: gender,
+            age: age,
+            maxPulse: maxPulse,
+            zones: zones,
+            descriptions: descriptions,
+            summary: `Complete pulse profile for a ${age}-year-old ${gender}`
         }
     }
 }

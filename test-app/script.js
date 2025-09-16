@@ -55,3 +55,31 @@ console.log('Zone 2:', pulseZoneFemale.zone2.min, '-', pulseZoneFemale.zone2.max
 console.log('Zone 3:', pulseZoneFemale.zone3.min, '-', pulseZoneFemale.zone3.max)
 console.log('Zone 4:', pulseZoneFemale.zone4.min, '-', pulseZoneFemale.zone4.max)
 console.log('Zone 5:', pulseZoneFemale.zone5.min, '-', pulseZoneFemale.zone5.max)
+
+
+// Test for describePulseZones
+console.log('--- Testing describePulseZones ---')
+let pulseDescriptions = calc.describePulseZones()
+console.log('Zone 1:', pulseDescriptions.zone1)
+console.log('Zone 2:', pulseDescriptions.zone2)
+console.log('Zone 3:', pulseDescriptions.zone3)
+console.log('Zone 4:', pulseDescriptions.zone4)
+console.log('Zone 5:', pulseDescriptions.zone5)
+
+// Test for analyzePulseProfile
+console.log('--- Testing analyzePulseProfile ---')
+let myMaxPulse = calc.analyzePulseProfile('male', 30)
+
+console.log('=== PULSE PROFILE ===')
+console.log('Gender: ' + myMaxPulse.gender)
+console.log('Age: ' + myMaxPulse.age)
+console.log('Max Pulse:', myMaxPulse.maxPulse, 'bpm')
+console.log('Summary:', myMaxPulse.summary)
+console.log('')
+
+console.log('TRAINING ZONES:')
+console.log('Zone 1 (' + myMaxPulse.zones.zone1.min + '-' + myMaxPulse.zones.zone1.max + ' bpm): ' + myMaxPulse.descriptions.zone1)
+console.log('Zone 2 (' + myMaxPulse.zones.zone2.min + '-' + myMaxPulse.zones.zone2.max + ' bpm): ' + myMaxPulse.descriptions.zone2)
+console.log('Zone 3 (' + myMaxPulse.zones.zone3.min + '-' + myMaxPulse.zones.zone3.max + ' bpm): ' + myMaxPulse.descriptions.zone3)
+console.log('Zone 4 (' + myMaxPulse.zones.zone4.min + '-' + myMaxPulse.zones.zone4.max + ' bpm): ' + myMaxPulse.descriptions.zone4)
+console.log('Zone 5 (' + myMaxPulse.zones.zone5.min + '-' + myMaxPulse.zones.zone5.max + ' bpm): ' + myMaxPulse.descriptions.zone5)
