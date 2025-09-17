@@ -83,12 +83,25 @@ let predictedTime = calc.predictRaceTime(3, 18, 5)
 let formatTime = calc.formatTime(predictedTime)
 console.log('Predicted race time for 5km with a known time of 18min for 3km: ' + formatTime)
 
-// Testa annan distans  
+console.log('')
+console.log('--- Additional tests for predictRaceTime ---')
 let predictedMarathon = calc.predictRaceTime(10, 45, 42.2)
 console.log('Marathon prediction:', calc.formatTime(predictedMarathon))
 
-// Testa else-fallet
+
 let predicted7K = calc.predictRaceTime(5, 25, 7)
 console.log('7K prediction (using standard formula):', calc.formatTime(predicted7K))
 
+// Test for generateWeeklyRunningPlan
+console.log('--- Testing generateWeeklyRunningPlan ---')
+
+// Test 1 day per week
+let plan1Day = calc.generateWeeklyRunningPlan(1)
+console.log('Plan for 1 day per week:')
+console.log(plan1Day)
+
+// Test 5 days per week
+let plan5Days = calc.generateWeeklyRunningPlan(5)
+console.log('Plan for 5 days per week:')
+console.log(plan5Days)
 
