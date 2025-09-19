@@ -2,26 +2,22 @@ class RunningCalculator {
 
     // Calculate pace: time/distance
     calculatePace(distance, time) {
-        const result = time / distance
-        return result
+        return time / distance
     }
 
     // Convert pace (min/km) to speed (km/h)
     paceToSpeed(pace) {
-        const result = 60 / pace
-        return result
+        return 60 / pace
     }
 
     // Calculate time from distance and pace
     calculateTime(distance, pace) {
-        const result = distance * pace
-        return result
+        return distance * pace
     }
 
     // Calculate distance from time and pace 
     calculateDistance(time, pace) {
-        const result = time / pace
-        return result
+        return time / pace
     }
 
     // Format time from decimal minutes to h, min, sec
