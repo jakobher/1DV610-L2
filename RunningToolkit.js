@@ -1,6 +1,6 @@
 import RunningCalculator from './RunningCalculator.js';
-import PulseCalculator from './PulseCalculator.js';
+import FitnessAnalyzer from './FitnessAnalyzer.js';
 import RacePredictor from './RacePredictor.js';
 import TrainingPlanGenerator from './TrainingPlanGenerator.js';
 
-export { RunningCalculator, PulseCalculator, RacePredictor, TrainingPlanGenerator };
+export { RunningCalculator, FitnessAnalyzer, RacePredictor, TrainingPlanGenerator };

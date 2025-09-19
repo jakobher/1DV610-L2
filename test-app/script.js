@@ -1,8 +1,8 @@
-import { RunningCalculator, PulseCalculator, RacePredictor, TrainingPlanGenerator } from "../runningToolkit.js";
+import { RunningCalculator, RacePredictor, TrainingPlanGenerator, FitnessAnalyzer } from "../runningToolkit.js";
 
 
 const calc = new RunningCalculator();
-const pulse = new PulseCalculator();
+const fitness = new FitnessAnalyzer();
 const race = new RacePredictor();
 const plan = new TrainingPlanGenerator();
 
@@ -35,13 +35,25 @@ console.log('--- Testing calculateDistance ---')
 let myDistance = calc.calculateDistance(25, 5)
 console.log(`25min with 5 pace takes you ${myDistance}km`)
 
+// Test for calculateRestingHeartRate
+console.log('')
+console.log('--- Testing calculateRestingHeartRate ---')
+let restingHR = fitness.calculateRestingHeartRate(30, 'medium')
+console.log(`Estimated resting heart rate for a 30 year old with medium activity level is ${restingHR} bpm`)
+
 // Test for calculateMaxPulse
 console.log('')
 console.log('--- Testing calculateMaxPulse ---')
-let maxPulseMale = pulse.calculateMaxPulse('male', 30)
+let maxPulseMale = fitness.calculateMaxPulse('male', 30)
 console.log(`Max pulse for a 30 year old male is ${maxPulseMale}`)
-let maxPulseFemale = pulse.calculateMaxPulse('female', 30)
+let maxPulseFemale = fitness.calculateMaxPulse('female', 30)
 console.log(`Max pulse for a 30 year old female is ${maxPulseFemale}`)
+
+// Test for estimateVo2Max
+console.log('')
+console.log('--- Testing estimateVo2Max ---')
+let vo2MaxMale = fitness.estimateVo2Max(maxPulseMale, restingHR)
+console.log(`Estimated Vo2 max for a 30 year old male is ${vo2MaxMale}`)
 
 
 // Test for calculatePulseZones
@@ -50,7 +62,7 @@ console.log('--- Testing calculatePulseZones ---')
 console.log('---')
 console.log('Pulse zones for a 30-year old male:')
 console.log('---')
-let pulseZoneMale = pulse.calculatePulseZones('male', 30)
+let pulseZoneMale = fitness.calculatePulseZones('male', 30)
 console.log('Zone 1:', pulseZoneMale.zone1.min, '-', pulseZoneMale.zone1.max)
 console.log('Zone 2:', pulseZoneMale.zone2.min, '-', pulseZoneMale.zone2.max)
 console.log('Zone 3:', pulseZoneMale.zone3.min, '-', pulseZoneMale.zone3.max)
@@ -60,21 +72,24 @@ console.log('Zone 5:', pulseZoneMale.zone5.min, '-', pulseZoneMale.zone5.max)
 // Test for describePulseZones
 console.log('')
 console.log('--- Testing describePulseZones ---')
-let pulseDescriptions = pulse.describePulseZones()
+let pulseDescriptions = fitness.describePulseZones()
 console.log('Zone 1:', pulseDescriptions.zone1)
 console.log('Zone 2:', pulseDescriptions.zone2)
 console.log('Zone 3:', pulseDescriptions.zone3)
 console.log('Zone 4:', pulseDescriptions.zone4)
 console.log('Zone 5:', pulseDescriptions.zone5)
 
-// Test for analyzePulseProfile
+// Test for createCompleteProfile
 console.log('')
-console.log('--- Testing analyzePulseProfile ---')
-let myMaxPulse = pulse.analyzePulseProfile('male', 30)
+console.log('--- Testing createCompleteProfile ---')
+let myMaxPulse = fitness.createCompleteProfile('male', 30, 'medium')
 console.log('=== PULSE PROFILE ===')
 console.log('Gender: ' + myMaxPulse.gender)
 console.log('Age: ' + myMaxPulse.age)
+console.log('Resting Heart Rate: ' + restingHR + ' bpm')
 console.log('Max Pulse:', myMaxPulse.maxPulse, 'bpm')
+console.log('Estimated Vo2 Max: ' + myMaxPulse.vo2Max + ' ml/kg/min')
+console.log('')
 console.log('TRAINING ZONES:')
 console.log('Zone 1 (' + myMaxPulse.zones.zone1.min + '-' + myMaxPulse.zones.zone1.max + ' bpm): ' + myMaxPulse.descriptions.zone1)
 console.log('Zone 2 (' + myMaxPulse.zones.zone2.min + '-' + myMaxPulse.zones.zone2.max + ' bpm): ' + myMaxPulse.descriptions.zone2)
