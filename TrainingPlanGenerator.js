@@ -1,11 +1,11 @@
 class TrainingPlanGenerator {
 
-// Generate weekly training schedule
+    // Generate weekly training schedule
     // Reflection: This function does more than one thing and could be split into smaller functions. 
     // It is also a very long function that breaks the "small functions" principle.
     generateWeeklyRunningPlan(runningDaysPerWeek) {
         const schedule = []
-        
+
         for (let day = 1; day <= 7; day++) {
             let workoutType = 'Rest' // Default to rest day
 
@@ -67,15 +67,15 @@ class TrainingPlanGenerator {
                 if (day === 6) {
                     workoutType = 'Saturday: Long Run @ zone 1-2'
                 }
-            } 
+            }
 
             schedule.push({
                 day: day,
                 workout: workoutType
             })
-    }
+        }
         return schedule
-}
+    }
 }
 
 export default TrainingPlanGenerator;

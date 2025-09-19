@@ -1,6 +1,6 @@
 class RacePredictor {
 
-    // Predict race time for 5 km based on known distance and time with Riegel's formula
+    // Predict race time with Riegel's formula
     predictRaceTime(knownDistance, knownTime, targetDistance) {
         let predictedTime = 0
         if (targetDistance === 5) {
