@@ -1,4 +1,4 @@
-import { RunningCalculator, RacePredictor, TrainingPlanGenerator, FitnessAnalyzer } from "../runningToolkit.js";
+import { RunningCalculator, RacePredictor, TrainingPlanGenerator, FitnessAnalyzer } from "../src/RunningToolkit.js";
 
 
 const calc = new RunningCalculator();
