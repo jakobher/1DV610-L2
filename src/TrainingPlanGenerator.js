@@ -5,6 +5,7 @@ class TrainingPlanGenerator {
     // It is also a very long function that breaks the "small functions" principle.
     generateWeeklyRunningPlan(runningDaysPerWeek) {
         const schedule = []
+        this.#validateInputs(runningDaysPerWeek)
 
         for (let day = 1; day <= 7; day++) {
             let workoutType = 'Rest' // Default to rest day
@@ -75,6 +76,12 @@ class TrainingPlanGenerator {
             })
         }
         return schedule
+    }
+
+    #validateInputs(runningDaysPerWeek) {
+        if (!runningDaysPerWeek || runningDaysPerWeek < 1 || runningDaysPerWeek > 7) {
+            throw new Error('Running days per week must be between 1 and 7')
+        }
     }
 }
 
