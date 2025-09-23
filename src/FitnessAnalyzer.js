@@ -77,6 +77,19 @@ class FitnessAnalyzer {
     estimateVo2Max(maxHR, restingHR) {
         return 15.3 * (maxHR / restingHR) + 3.5
     }
+
+    // Validate inputs from user
+    validateInputs(gender, age, activityLevel) {
+        if (!gender || (gender === 'male' || gender === 'female' || gender === 'other')) {
+            throw new Error('Gender must be "male", "female" or "other"')
+        }
+        if (!age || age < 18 || age > 100) {
+            throw new Error('Age must be between 18 and 100')
+        }
+        if (!activityLevel || (activityLevel === 'low' || activityLevel === 'medium' || activityLevel === 'high' || activityLevel === 'athlete')) {
+            throw new Error('Activity level must be "low", "medium", "high" or "athlete"')
+        }
+    }
 }
 
 export default FitnessAnalyzer
