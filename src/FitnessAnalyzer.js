@@ -2,11 +2,12 @@ class FitnessAnalyzer {
 
     // Create complete profile
     createCompleteProfile(gender, age, activityLevel) {
-        const restingHR = this.calculateRestingHeartRate(age, activityLevel);
-        const maxPulse = this.calculateMaxPulse(gender, age);
-        const zones = this.calculatePulseZones(gender, age);
-        const descriptions = this.describePulseZones();
-        const vo2Max = this.estimateVo2Max(maxPulse, restingHR);
+        this.#validateInputs(gender, age, activityLevel)
+        const restingHR = this.calculateRestingHeartRate(age, activityLevel)
+        const maxPulse = this.calculateMaxPulse(gender, age)
+        const zones = this.calculatePulseZones(gender, age)
+        const descriptions = this.describePulseZones()
+        const vo2Max = this.estimateVo2Max(maxPulse, restingHR)
 
 
         return {
@@ -43,8 +44,8 @@ class FitnessAnalyzer {
             maxPulse = 220 - age
         } else if (gender === 'female') {
             maxPulse = 226 - age
-        } else {
-            console.log('Invalid input')
+        } else if (gender === 'other') {
+            maxPulse = 223 - age
         }
         return maxPulse
     }
@@ -79,14 +80,14 @@ class FitnessAnalyzer {
     }
 
     // Validate inputs from user
-    validateInputs(gender, age, activityLevel) {
-        if (!gender || (gender === 'male' || gender === 'female' || gender === 'other')) {
+    #validateInputs(gender, age, activityLevel) {
+        if (!gender || (gender !== 'male' && gender !== 'female' && gender !== 'other')) {
             throw new Error('Gender must be "male", "female" or "other"')
         }
         if (!age || age < 18 || age > 100) {
             throw new Error('Age must be between 18 and 100')
         }
-        if (!activityLevel || (activityLevel === 'low' || activityLevel === 'medium' || activityLevel === 'high' || activityLevel === 'athlete')) {
+        if (!activityLevel || (activityLevel !== 'low' && activityLevel !== 'medium' && activityLevel !== 'high' && activityLevel !== 'athlete')) {
             throw new Error('Activity level must be "low", "medium", "high" or "athlete"')
         }
     }
