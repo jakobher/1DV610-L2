@@ -2,6 +2,7 @@ class RacePredictor {
 
     // Predict race time with Riegel's formula
     predictRaceTime(knownDistance, knownTime, targetDistance) {
+        this.#validateInputs(knownDistance, knownTime, targetDistance)
         let predictedTime = 0
         if (targetDistance === 5) {
             predictedTime = knownTime * (targetDistance / knownDistance) ** 1.06
@@ -16,6 +17,20 @@ class RacePredictor {
         }
         return predictedTime
     }
+
+        // Validate inputs from user
+    #validateInputs(knownDistance, knownTime, targetDistance) {
+        if (!knownDistance || knownDistance <= 0) {
+            throw new Error('Known distance must be a positive number')
+        }
+        if (!knownTime || knownTime <= 0) {
+            throw new Error('Known time must be a positive number')
+        }
+        if (!targetDistance || targetDistance <= 0) {
+            throw new Error('Target distance must be a positive number')
+        }
+    }
+
 }
 
 export default RacePredictor;
