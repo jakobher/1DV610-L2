@@ -38,8 +38,12 @@ Den stora skillnaden mellan mina metoder är längden och komplexiteten. Ursprun
 
 Jag har en del funktioner som gör beräkningar där distans och fart räknas i kilometer, jag har inget som koverterar till miles vilket skulle vara något för vidareutveckling. Detta var något som jag inte tänkte alls på i början men att bara ha det begränsat till kilometer kan möjligvis begräna återanvändbarheten. 
 
-En tydlig reflektion är insikten jag fick om att bryta ut funktioner och fördela ansvaret till mindre funktioner. Ett exempel är refaktoreringen jag gjorde i generateWeeklyRunningPlan(). Till en början såg den ut såhär ![generateWeeklyRunningPlan-before](../docs/img/generateWeeklyRunningPlan-before.png) 
+En tydlig reflektion är insikten jag fick om att bryta ut funktioner och fördela ansvaret till mindre funktioner. Ett exempel är refaktoreringen jag gjorde i generateWeeklyRunningPlan(). Till en början såg den ut såhär: 
 
-Och efter refaktoreringen såhär ![generateWeeklyRunningPlan-after](../docs/img/generateWeeklyRunningPlan-after.png)
+![generateWeeklyRunningPlan-before](../docs/img/generateWeeklyRunningPlan-before.png) 
+
+Och efter refaktoreringen såhär:
+
+ ![generateWeeklyRunningPlan-after](../docs/img/generateWeeklyRunningPlan-after.png)
 
 Med denna refaktorering tycker jag att jag tillämpade flera principer från Clean Code som "Do One Thing" och "Small Functions" 

@@ -115,10 +115,15 @@ const completeProfile = fitness.createCompleteProfile('male', 30, 'medium')
 console.log('createCompleteProfile(male, 30, medium)')
 if (completeProfile.gender === 'male' && 
     completeProfile.age === 30 && 
-    completeProfile.maxPulse === 190) {
-    console.log('Expected: gender=male, age=30, maxPulse=190, Result: gender=' + completeProfile.gender + ', age=' + completeProfile.age + ', maxPulse=' + completeProfile.maxPulse + ' ✅')
+    completeProfile.maxPulse === 190 &&
+    completeProfile.zones && 
+    completeProfile.descriptions &&
+    completeProfile.vo2Max &&
+    completeProfile.summary) {
+    console.log('Expected: Complete profile with all properties, Result: All properties present ✅')
+    console.log('Sample: VO2Max=' + completeProfile.vo2Max + ', Zones=' + Object.keys(completeProfile.zones).length)
 } else {
-    console.log('Expected: gender=male, age=30, maxPulse=190, Result: gender=' + completeProfile.gender + ', age=' + completeProfile.age + ', maxPulse=' + completeProfile.maxPulse + ' ❌')
+    console.log('Expected: Complete profile with all properties, Result: Missing properties ❌')
 }
 console.log('\n')
 
