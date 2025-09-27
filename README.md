@@ -15,12 +15,12 @@ A JavaScript toolkit to help runners with pace calculations, fitness tracking, r
 
 ### From GitHub
 ```bash
-git clone https://github.com/[your-username]/running-toolkit.git
+git clone https://github.com/jakher/1DV610.git
 cd running-toolkit 
 ```
 ### From NPM
 ```bash
-npm install running-toolkit (not available yet)
+npm install running-toolkit
 ```
 
 ### Requirements
@@ -28,7 +28,12 @@ Modern browser or Node.js 14+ (ES6 modules), no external dependencies
 
 ## Usage Examples
 ```javascript
+// Installation with GitHub 
 import { RunningCalculator, FitnessAnalyzer, RacePredictor, TrainingPlanGenerator } from './src/RunningToolkit.js'
+
+// Installation with npm
+import { RunningCalculator, FitnessAnalyzer, RacePredictor, TrainingPlanGenerator } from 'running-toolkit'
+
 
 // Calculate pace (distance, time)
 const calc = new RunningCalculator()

@@ -1,5 +1,14 @@
 {
-    "name": "running-calculator",
-    "version": "1.0.0",
-    "type": "module"
+  "name": "running-toolkit",
+  "version": "1.0.1",
+  "description": "JavaScript toolkit for running calculations, fitness analysis, and training plans",
+  "main": "src/RunningToolkit.js",
+  "type": "module",
+  "keywords": ["running", "fitness", "pace", "training", "heart-rate"],
+  "author": "Jakob Norrgård",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jakher/1DV610-L2.git"
+  }
 }
