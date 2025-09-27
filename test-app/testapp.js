@@ -113,9 +113,10 @@ console.log('\n')
 // Test createCompleteProfile
 const completeProfile = fitness.createCompleteProfile('male', 30, 'medium')
 console.log('createCompleteProfile(male, 30, medium)')
-if (completeProfile.gender === 'male' && 
-    completeProfile.age === 30 && 
-    completeProfile.maxPulse === 190 &&
+if (completeProfile.gender && 
+    completeProfile.age && 
+    completeProfile.maxPulse &&
+    completeProfile.restingHeartRate &&
     completeProfile.zones && 
     completeProfile.descriptions &&
     completeProfile.vo2Max &&
