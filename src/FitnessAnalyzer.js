@@ -9,7 +9,6 @@ class FitnessAnalyzer {
         const descriptions = this.describePulseZones()
         const vo2Max = this.estimateVo2Max(maxPulse, restingHR)
 
-
         return {
             gender: gender,
             age: age,
@@ -36,7 +35,6 @@ class FitnessAnalyzer {
         }
         return baseRestingHR;
     }
-
 
     // Calculate max pulse based on gender and age
     calculateMaxPulse(gender, age) {
@@ -75,7 +73,7 @@ class FitnessAnalyzer {
         }
     }
 
-    // Estimate Vo2 max from max pulse
+    // Estimate Vo2 max from max pulse and resting heart rate
     estimateVo2Max(maxHR, restingHR) {
         return 15.3 * (maxHR / restingHR) + 3.5
     }

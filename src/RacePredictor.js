@@ -18,7 +18,7 @@ class RacePredictor {
         return this.#formatTime(predictedTime)
     }
 
-        // Validate inputs from user
+    // Validate inputs from user
     #validateInputs(knownDistance, knownTime, targetDistance) {
         if (!knownDistance || knownDistance <= 0) {
             throw new Error('Known distance must be a positive number')
@@ -32,17 +32,16 @@ class RacePredictor {
     }
 
     #formatTime(decimalMinutes) {
-    const hours = Math.floor(decimalMinutes / 60)
-    const minutes = Math.floor(decimalMinutes % 60)
-    const seconds = Math.round((decimalMinutes - Math.floor(decimalMinutes)) * 60)
-    
-    if (hours > 0) {
-        return `${hours} h ${minutes} min ${seconds} sec`
-    } else {
-        return `${minutes} min ${seconds} sec`
-    }
-}
+        const hours = Math.floor(decimalMinutes / 60)
+        const minutes = Math.floor(decimalMinutes % 60)
+        const seconds = Math.round((decimalMinutes - Math.floor(decimalMinutes)) * 60)
 
+        if (hours > 0) {
+            return `${hours} h ${minutes} min ${seconds} sec`
+        } else {
+            return `${minutes} min ${seconds} sec`
+        }
+    }
 }
 
 export default RacePredictor;

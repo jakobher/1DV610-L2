@@ -1,5 +1,5 @@
 class RunningCalculator {
-
+    
     // Calculate pace: time/distance
     calculatePace(distance, time) {
         this.#inputValidation(distance)
