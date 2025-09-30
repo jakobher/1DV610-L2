@@ -6,7 +6,7 @@
 |------|------------|---------------------------------------|
 | FitnessAnalyzer.js | Klassnamn (var PulseCalculator) | Omdöpt från tidigare PulseCalculator, ju mer klassen växte desto mer otydligt blev det tidigare namnet. Det nya namnet beskriver bättre vad klassen faktiskt gör. För att **Avoid Disinformation** och istället **Use intention-Revealing Names** |
 | createCompleteProfile() | Huvudmetod i FitnessAnalyzer | Metod som använder hjälpmetoder, namnbeskrivningen tycker jag är bra och beskrivande. Osäker på hur man ska tänka kring **Single Responsibility Principle** här, metoden gör ju en sak (av många andra saker). |
-| calculateMaxPulse() | Hjälpmetod i FitnessAnalyzer | Hjälpmetod som har tydligt namn, dock är det inte optimalt att blanda pulse/heartrate, jag har även en metod som räknar ut vilopuls som heter calculateRestingHeartRate(). Borde hålla mig till ett val i hur jag beskriver. För att följa samma stil skulle denna kunna döpas om till calculateMaxHeartRate(). Jag har valt att behålla namnen för att delvis påminna mig själv hur rörigt det kan bli ibland och vikten av hur bra det är att vara tydlig och konsekvent i namngivningen. |
+| calculateMaxPulse() | Hjälpmetod i FitnessAnalyzer | **Pick One Word Per Concept** Hjälpmetod som har tydligt namn, dock är det inte optimalt att blanda pulse/heartrate, jag har även en metod som räknar ut vilopuls som heter calculateRestingHeartRate(). Borde hålla mig till ett val i hur jag beskriver. För att följa samma stil skulle denna kunna döpas om till calculateMaxHeartRate(). Jag har valt att behålla namnen för att delvis påminna mig själv hur rörigt det kan bli ibland och vikten av hur bra det är att vara tydlig och konsekvent i namngivningen. |
 | generateWeeklyRunningPlan() | Metod i TrainingPlanGenerator | **Use intention-Revealing Names:** Bra namngivning som tydligt beskriver vad metoden gör. Namnet är ganska långt men jag tycker att det är försvarbart i och med hur tydligt det är. |
 | calculatePace() | Metod i RunningCalculator | Tycker att dessa korta beräkningar har lite samma etikett, namnet beskriver tydligt vad dem gör men samtidigt inte. Svårt att veta hur man skulle göra om dessa. Med tanke på att metoders namn endast ska beskriva vad dem gör och inte hur. Parametrarna dessa har skvallrar ju dock om hur. Jag tycker att det krockar lite med **Use intention-Revealing Names** och **Avoid Disinformation**. En idé skulle vara att döpa om till calculatePaceFromDistanceAndTime(), å andra sidan beskriver den då både vad och hur den gör något. |
 
@@ -50,3 +50,19 @@ Jag märkte en bit in i laborationen att mitt tankesätt blev väldigt riktat mo
 Ett tydligt exempel på att jag svävade iväg lite är funktionen `describePulseZones()` som returnerar hårdkodade engelska beskrivningar som "Very light activity, helps with recovery". En bättre design hade varit att bara returnera rådata (min/max puls) och låta användaren av modulen bestämma beskrivningar. Men i mitt fall låg tankarna på vad jag kanske skulle vilja använda det till i L3 senare. 
 
 Från denna laborationen tar jag med mig att det är viktigt att tänka över dessa koncept när man skriver kod för att underlätta både för sig själv och andra som ska läsa eller använda koden. 
+
+---
+
+# Om min reflektionsprocess
+Jag har bockat i att jag skrivit min reflektion själv, vilket jag har gjort.
+
+## Hur jag använt LLM/AI-verktyg
+Under laborationen har jag använt Claude AI som:
+- Disskusionspartner
+- Kontrollera grammatik
+- Som stöd för att förtydliga formuleringar
+- Som hjälp att strukturera i dokumentation
+
+Alla reflektioner, observationer och exempel är mina egna.
+
+Reflektionsdokumentet har vuxit under arbetets gång och inte skrivits som ett utkast och sen "renskrivits" av en LLM.
