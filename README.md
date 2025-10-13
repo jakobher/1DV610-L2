@@ -18,6 +18,7 @@ npm install running-toolkit
 ```
 
 ### Requirements
+
 - Modern browser with ES6 module support
 - Node.js v22+ (tested on v22.7.0)
 - No external dependencies
@@ -25,12 +26,13 @@ npm install running-toolkit
 ## Quick Start
 
 Want to try it right away? Copy this into a file and run it:
+
 ```javascript
 import { FitnessAnalyzer, RunningCalculator } from 'running-toolkit'
 
 const fitness = new FitnessAnalyzer()
 
-// Create your fitness profile  
+// Create your fitness profile
 const profile = fitness.createCompleteProfile('male', 32, 'medium')
 
 console.log(`
@@ -41,10 +43,13 @@ VO2 Max: ${profile.vo2Max}
 Zone 3 (Aerobic): ${profile.zones.zone3.min}-${profile.zones.zone3.max} bpm
 `)
 ```
+
 **Try your own values!** Try changing the gender (`'male'`/`'female'`/`'other'`), age (18-100), and activity level (`'low'`/`'medium'`/`'high'`/`'athlete'`) to match your own profile and see how the results change.
 
 ## Usage Examples
+
 ### Running Calculations
+
 ```javascript
 import { RunningCalculator } from 'running-toolkit'
 
@@ -56,7 +61,9 @@ const pace = calc.calculatePace(5, 25) // 5km in 25min
 const formattedTime = calc.formatTime(125) // Format 125 minutes
 // formattedTime = "2 h 5 min 0 sec"
 ```
+
 ### Fitness Analysis
+
 ```javascript
 import { FitnessAnalyzer } from 'running-toolkit'
 
@@ -65,7 +72,9 @@ const fitness = new FitnessAnalyzer()
 const profile = fitness.createCompleteProfile('male', 30, 'medium')
 // profile.maxPulse = 190, profile.vo2Max = "49.64", profile.zones = {...}
 ```
+
 ### Race Prediction
+
 ```javascript
 import { RacePredictor } from 'running-toolkit'
 
@@ -74,24 +83,32 @@ const predictor = new RacePredictor()
 const predicted5k = predictor.predictRaceTime(3, 18, 5) // 3km in 18min → predict 5km
 // predicted5k = "30 min 56 sec" (formatted time)
 ```
+
 ### Training Plan
+
 ```javascript
 import { TrainingPlanGenerator } from 'running-toolkit'
 
 // Generate training schedule
 const planner = new TrainingPlanGenerator()
-const weekPlan = planner.generateWeeklyRunningPlan(3) 
+const weekPlan = planner.generateWeeklyRunningPlan(3)
 // weekPlan = [{day: 1, workout: "Monday: Easy Run @ zone 1-2"}, ...]
 ```
+
 ## About the Calculations
+
 - **Race predictions:** Based on Riegel's formula with distance-specific adjustments
-- **Heart rate zones:** Standard percentage-based training zones  
+- **Heart rate zones:** Standard percentage-based training zones
 - **VO2 Max:** Estimated from heart rate data using established formulas
 
 ## Reflections
+
 Reflections are found in [reflektion.md](/docs/reflektion.md)
 
 ## Testing
+
 Test report is found in [testrapport.md](/docs/testrapport.md)
+
 ## License
+
 [MIT](/LICENSE)
