@@ -6,7 +6,6 @@ class FitnessAnalyzer {
         const restingHR = this.calculateRestingHeartRate(age, activityLevel)
         const maxHR = this.calculateMaxHeartRate(gender, age)
         const zones = this.calculatePulseZones(gender, age)
-        const descriptions = this.describePulseZones()
         const vo2Max = this.estimateVo2Max(maxHR, restingHR)
 
         return {
@@ -15,7 +14,6 @@ class FitnessAnalyzer {
             maxHR: maxHR,
             restingHeartRate: restingHR,
             zones: zones,
-            descriptions: descriptions,
             vo2Max: vo2Max.toFixed(2),
             summary: `Complete fitness profile for a ${age}-year-old ${gender}`
         }

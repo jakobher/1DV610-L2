@@ -118,7 +118,6 @@ if (completeProfile.gender &&
     completeProfile.maxHR &&
     completeProfile.restingHeartRate &&
     completeProfile.zones && 
-    completeProfile.descriptions &&
     completeProfile.vo2Max &&
     completeProfile.summary) {
     console.log('Expected: Complete profile with all properties, Result: All properties present ✅')
