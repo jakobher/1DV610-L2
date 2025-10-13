@@ -1,6 +1,5 @@
 class FitnessAnalyzer {
-
-    // Create complete profile
+    
     createCompleteProfile(gender, age, activityLevel) {
         this.#validateInputs(gender, age, activityLevel)
         const restingHR = this.calculateRestingHeartRate(age, activityLevel)
@@ -19,7 +18,6 @@ class FitnessAnalyzer {
         }
     }
 
-    // Calculate resting heart rate based measurements
     calculateRestingHeartRate(age, activityLevel) {
         let baseRestingHR = 70 - Math.floor(age / 4);
         if (activityLevel === 'low') {
@@ -34,7 +32,6 @@ class FitnessAnalyzer {
         return baseRestingHR;
     }
 
-    // Calculate max pulse based on gender and age
     calculateMaxHeartRate(gender, age) {
         let maxHR = 0
         if (gender === 'male') {
@@ -47,7 +44,6 @@ class FitnessAnalyzer {
         return maxHR
     }
 
-    // Calculate pulse zones based on max pulse
     calculatePulseZones(gender, age) {
         let maxHR = this.calculateMaxHeartRate(gender, age)
 
@@ -60,7 +56,6 @@ class FitnessAnalyzer {
         }
     }
 
-    // Describe pulse zones
     describePulseZones() {
         return {
             zone1: "Very light activity, helps with recovery.",
@@ -71,12 +66,10 @@ class FitnessAnalyzer {
         }
     }
 
-    // Estimate Vo2 max from max pulse and resting heart rate
     estimateVo2Max(maxHR, restingHR) {
         return 15.3 * (maxHR / restingHR) + 3.5
     }
 
-    // Validate inputs from user
     #validateInputs(gender, age, activityLevel) {
         if (!gender || (gender !== 'male' && gender !== 'female' && gender !== 'other')) {
             throw new Error('Gender must be "male", "female" or "other"')

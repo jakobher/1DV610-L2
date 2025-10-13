@@ -4,7 +4,7 @@ class TrainingPlanGenerator {
         this.#validateInputs(runningDaysPerWeek)
 
         for (let day = 1; day <= 7; day++) {
-            let workoutType = 'Rest' // Default to rest day
+            let workoutType = 'Rest'
             if (runningDaysPerWeek === 1) {
                 workoutType = this.#getOneDayPlan(day)
             } else if (runningDaysPerWeek === 2) {

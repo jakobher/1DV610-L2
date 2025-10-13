@@ -1,33 +1,28 @@
 class RunningCalculator {
     
-    // Calculate pace: time/distance
     calculatePace(distance, time) {
         this.#inputValidation(distance)
         this.#inputValidation(time)
         return time / distance
     }
 
-    // Convert pace (min/km) to speed (km/h)
     paceToSpeed(pace) {
         this.#inputValidation(pace)
         return 60 / pace
     }
 
-    // Calculate time from distance and pace
     calculateTime(distance, pace) {
         this.#inputValidation(distance)
         this.#inputValidation(pace)
         return distance * pace
     }
 
-    // Calculate distance from time and pace 
     calculateDistance(time, pace) {
         this.#inputValidation(time)
         this.#inputValidation(pace)
         return time / pace
     }
 
-    // Format time from decimal minutes to h, min, sec
     formatTime(decimalMinutes) {
         this.#inputValidation(decimalMinutes)
         const hours = Math.floor(decimalMinutes / 60)
