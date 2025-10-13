@@ -68,13 +68,13 @@ if (restingHeartRate === 63) {
 }
 console.log('\n')
 
-// Test calculateMaxPulse
-const maxPulse = fitness.calculateMaxPulse('male', 30)
-console.log('calculateMaxPulse(male, 30)')
-if (maxPulse === 190) {
-    console.log('Expected: 190, Result: ' + maxPulse + ' ✅')
+// Test calculateMaxHeartRate
+const maxHeartRate = fitness.calculateMaxHeartRate('male', 30)
+console.log('calculateMaxHeartRate(male, 30)')
+if (maxHeartRate === 190) {
+    console.log('Expected: 190, Result: ' + maxHeartRate + ' ✅')
 } else {
-    console.log('Expected: 190, Result: ' + maxPulse + ' ❌')
+    console.log('Expected: 190, Result: ' + maxHeartRate + ' ❌')
 }
 console.log('\n')
 // Test estimateVo2Max
@@ -115,7 +115,7 @@ const completeProfile = fitness.createCompleteProfile('male', 30, 'medium')
 console.log('createCompleteProfile(male, 30, medium)')
 if (completeProfile.gender && 
     completeProfile.age && 
-    completeProfile.maxPulse &&
+    completeProfile.maxHR &&
     completeProfile.restingHeartRate &&
     completeProfile.zones && 
     completeProfile.descriptions &&

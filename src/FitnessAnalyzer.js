@@ -4,15 +4,15 @@ class FitnessAnalyzer {
     createCompleteProfile(gender, age, activityLevel) {
         this.#validateInputs(gender, age, activityLevel)
         const restingHR = this.calculateRestingHeartRate(age, activityLevel)
-        const maxPulse = this.calculateMaxPulse(gender, age)
+        const maxHR = this.calculateMaxHeartRate(gender, age)
         const zones = this.calculatePulseZones(gender, age)
         const descriptions = this.describePulseZones()
-        const vo2Max = this.estimateVo2Max(maxPulse, restingHR)
+        const vo2Max = this.estimateVo2Max(maxHR, restingHR)
 
         return {
             gender: gender,
             age: age,
-            maxPulse: maxPulse,
+            maxHR: maxHR,
             restingHeartRate: restingHR,
             zones: zones,
             descriptions: descriptions,
@@ -37,28 +37,28 @@ class FitnessAnalyzer {
     }
 
     // Calculate max pulse based on gender and age
-    calculateMaxPulse(gender, age) {
-        let maxPulse = 0
+    calculateMaxHeartRate(gender, age) {
+        let maxHR = 0
         if (gender === 'male') {
-            maxPulse = 220 - age
+            maxHR = 220 - age
         } else if (gender === 'female') {
-            maxPulse = 226 - age
+            maxHR = 226 - age
         } else if (gender === 'other') {
-            maxPulse = 223 - age
+            maxHR = 223 - age
         }
-        return maxPulse
+        return maxHR
     }
 
     // Calculate pulse zones based on max pulse
     calculatePulseZones(gender, age) {
-        let maxPulse = this.calculateMaxPulse(gender, age)
+        let maxHR = this.calculateMaxHeartRate(gender, age)
 
         return {
-            zone1: { min: Math.round(maxPulse * 0.5), max: Math.round(maxPulse * 0.6) },
-            zone2: { min: Math.round(maxPulse * 0.6), max: Math.round(maxPulse * 0.7) },
-            zone3: { min: Math.round(maxPulse * 0.7), max: Math.round(maxPulse * 0.8) },
-            zone4: { min: Math.round(maxPulse * 0.8), max: Math.round(maxPulse * 0.9) },
-            zone5: { min: Math.round(maxPulse * 0.9), max: maxPulse }
+            zone1: { min: Math.round(maxHR * 0.5), max: Math.round(maxHR * 0.6) },
+            zone2: { min: Math.round(maxHR * 0.6), max: Math.round(maxHR * 0.7) },
+            zone3: { min: Math.round(maxHR * 0.7), max: Math.round(maxHR * 0.8) },
+            zone4: { min: Math.round(maxHR * 0.8), max: Math.round(maxHR * 0.9) },
+            zone5: { min: Math.round(maxHR * 0.9), max: maxHR }
         }
     }
 
