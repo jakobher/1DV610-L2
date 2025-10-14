@@ -169,11 +169,12 @@ console.log('\n')
 
 // Test predictRaceTime
 const predictedTime = racePredictor.predictRaceTime(3, 18, 5)
+const formattedPredictTime = runCalc.formatTime(predictedTime)
 console.log('predictRaceTime(3, 18, 5)')
-if (predictedTime === '30 min 56 sec') {
-  console.log('Expected: 30 min 56 sec, Result: ' + predictedTime + ' ✅')
+if (formattedPredictTime === '30 min 56 sec') {
+  console.log('Expected: 30 min 56 sec, Result: ' + formattedPredictTime + ' ✅')
 } else {
-  console.log('Expected: 30 min 56 sec, Result: ' + predictedTime + ' ❌')
+  console.log('Expected: 30 min 56 sec, Result: ' + formattedPredictTime + ' ❌')
 }
 console.log('\n')
 
