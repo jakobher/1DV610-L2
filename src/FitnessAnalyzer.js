@@ -10,7 +10,7 @@ class FitnessAnalyzer {
       gender: gender,
       age: age,
       maxHR: maxHR,
-      restingHeartRate: restingHR,
+      restingHR: restingHR,
       zones: zones,
       vo2Max: vo2Max.toFixed(2),
       summary: `Complete fitness profile for a ${age}-year-old ${gender}`,

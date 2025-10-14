@@ -146,7 +146,7 @@ if (
   completeProfile.gender &&
   completeProfile.age &&
   completeProfile.maxHR &&
-  completeProfile.restingHeartRate &&
+  completeProfile.restingHR &&
   completeProfile.zones &&
   completeProfile.vo2Max &&
   completeProfile.summary

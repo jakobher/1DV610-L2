@@ -11,18 +11,6 @@ A JavaScript toolkit to help runners with pace calculations, fitness tracking, r
 - **Race Predictions**: Predict race times based on previous performances
 - **Training Plans**: Generate weekly running schedules
 
-## Installation
-
-```bash
-npm install running-toolkit
-```
-
-### Requirements
-
-- Modern browser with ES6 module support
-- Node.js v22+ (tested on v22.7.0)
-- No external dependencies
-
 ## Quick Start
 
 Want to try it right away? Copy this into a file and run it:
@@ -37,8 +25,8 @@ const profile = fitness.createCompleteProfile('male', 32, 'medium')
 
 console.log(`
 Your Fitness Profile:
-Max Heart Rate: ${profile.maxPulse} bpm
-Resting Heart Rate: ${profile.restingHeartRate} bpm  
+Max Heart Rate: ${profile.maxHR} bpm
+Resting Heart Rate: ${profile.restingHR} bpm  
 VO2 Max: ${profile.vo2Max}
 Zone 3 (Aerobic): ${profile.zones.zone3.min}-${profile.zones.zone3.max} bpm
 `)
@@ -70,7 +58,7 @@ import { FitnessAnalyzer } from 'running-toolkit'
 // Fitness analysis (gender: male/female/other, age: 18-100, activity: low/medium/high/athlete)
 const fitness = new FitnessAnalyzer()
 const profile = fitness.createCompleteProfile('male', 30, 'medium')
-// profile.maxPulse = 190, profile.vo2Max = "49.64", profile.zones = {...}
+// profile.maxHR = 190, profile.vo2Max = "49.64", profile.zones = {...}
 ```
 
 ### Race Prediction
@@ -94,6 +82,18 @@ const planner = new TrainingPlanGenerator()
 const weekPlan = planner.generateWeeklyRunningPlan(3)
 // weekPlan = [{day: 1, workout: "Monday: Easy Run @ zone 1-2"}, ...]
 ```
+
+## Installation
+
+```bash
+npm install running-toolkit
+```
+
+### Requirements
+
+- Modern browser with ES6 module support
+- Node.js v22+ (tested on v22.7.0)
+- No external dependencies
 
 ## About the Calculations
 
