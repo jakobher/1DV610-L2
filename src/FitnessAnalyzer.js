@@ -70,10 +70,7 @@ class FitnessAnalyzer {
   }
 
   #validateInputs(gender, age, activityLevel) {
-    if (
-      !gender ||
-      (gender !== 'male' && gender !== 'female' && gender !== 'other')
-    ) {
+    if (!gender || (gender !== 'male' && gender !== 'female' && gender !== 'other')) {
       throw new Error('Gender must be "male", "female" or "other"')
     }
     if (!age || age < 18 || age > 100) {
@@ -86,9 +83,7 @@ class FitnessAnalyzer {
         activityLevel !== 'high' &&
         activityLevel !== 'athlete')
     ) {
-      throw new Error(
-        'Activity level must be "low", "medium", "high" or "athlete"'
-      )
+      throw new Error('Activity level must be "low", "medium", "high" or "athlete"')
     }
   }
 }

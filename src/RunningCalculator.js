@@ -26,9 +26,7 @@ class RunningCalculator {
     this.#inputValidation(decimalMinutes)
     const hours = Math.floor(decimalMinutes / 60)
     const minutes = Math.floor(decimalMinutes % 60)
-    const seconds = Math.round(
-      (decimalMinutes - Math.floor(decimalMinutes)) * 60
-    )
+    const seconds = Math.round((decimalMinutes - Math.floor(decimalMinutes)) * 60)
     if (hours > 0) {
       return `${hours} h ${minutes} min ${seconds} sec`
     } else {

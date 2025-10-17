@@ -94,11 +94,7 @@ class TrainingPlanGenerator {
   }
 
   #validateInputs(runningDaysPerWeek) {
-    if (
-      !runningDaysPerWeek ||
-      runningDaysPerWeek < 1 ||
-      runningDaysPerWeek > 7
-    ) {
+    if (!runningDaysPerWeek || runningDaysPerWeek < 1 || runningDaysPerWeek > 7) {
       throw new Error('Running days per week must be between 1 and 7')
     }
   }

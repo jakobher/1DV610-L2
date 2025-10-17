@@ -95,16 +95,8 @@ console.log('\n')
 // Test calculatePulseZones
 const pulseZones = fitness.calculatePulseZones('male', 30)
 console.log('calculatePulseZones(male, 30)')
-if (
-  pulseZones.zone1 &&
-  pulseZones.zone2 &&
-  pulseZones.zone3 &&
-  pulseZones.zone4 &&
-  pulseZones.zone5
-) {
-  console.log(
-    'Expected: 5 pulse zones, Result: All zones created successfully ✅'
-  )
+if (pulseZones.zone1 && pulseZones.zone2 && pulseZones.zone3 && pulseZones.zone4 && pulseZones.zone5) {
+  console.log('Expected: 5 pulse zones, Result: All zones created successfully ✅')
   console.log(
     'Sample zones: Zone1=' +
       pulseZones.zone1.min +
@@ -123,17 +115,9 @@ console.log('\n')
 // Test describePulseZones
 const pulseDescriptions = fitness.describePulseZones()
 console.log('describePulseZones()')
-if (
-  pulseDescriptions.zone1 &&
-  pulseDescriptions.zone5 &&
-  typeof pulseDescriptions.zone1 === 'string'
-) {
-  console.log(
-    'Expected: Zone descriptions, Result: All descriptions provided ✅'
-  )
-  console.log(
-    'Sample: Zone1="' + pulseDescriptions.zone1.substring(0, 20) + '..."'
-  )
+if (pulseDescriptions.zone1 && pulseDescriptions.zone5 && typeof pulseDescriptions.zone1 === 'string') {
+  console.log('Expected: Zone descriptions, Result: All descriptions provided ✅')
+  console.log('Sample: Zone1="' + pulseDescriptions.zone1.substring(0, 20) + '..."')
 } else {
   console.log('Expected: Zone descriptions, Result: Missing descriptions ❌')
 }
@@ -151,19 +135,12 @@ if (
   completeProfile.vo2Max &&
   completeProfile.summary
 ) {
+  console.log('Expected: Complete profile with all properties, Result: All properties present ✅')
   console.log(
-    'Expected: Complete profile with all properties, Result: All properties present ✅'
-  )
-  console.log(
-    'Sample: VO2Max=' +
-      completeProfile.vo2Max +
-      ', Zones=' +
-      Object.keys(completeProfile.zones).length
+    'Sample: VO2Max=' + completeProfile.vo2Max + ', Zones=' + Object.keys(completeProfile.zones).length
   )
 } else {
-  console.log(
-    'Expected: Complete profile with all properties, Result: Missing properties ❌'
-  )
+  console.log('Expected: Complete profile with all properties, Result: Missing properties ❌')
 }
 console.log('\n')
 
@@ -183,13 +160,9 @@ const trainingPlan = trainingPlanGen.generateWeeklyRunningPlan(3)
 console.log('generateWeeklyRunningPlan(3)')
 const runningDays = trainingPlan.filter((day) => day.workout !== 'Rest').length
 if (runningDays === 3) {
-  console.log(
-    'Expected: 3 running days, Result: ' + runningDays + ' running days ✅'
-  )
+  console.log('Expected: 3 running days, Result: ' + runningDays + ' running days ✅')
 } else {
-  console.log(
-    'Expected: 3 running days, Result: ' + runningDays + ' running days ❌'
-  )
+  console.log('Expected: 3 running days, Result: ' + runningDays + ' running days ❌')
 }
 console.log('\n')
 console.log('End of tests.')

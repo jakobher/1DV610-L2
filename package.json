@@ -4,6 +4,9 @@
   "description": "JavaScript toolkit for running calculations, fitness analysis, and training plans",
   "main": "src/RunningToolkit.js",
   "type": "module",
+  "scripts": {
+    "format": "prettier --write ."
+  },
   "keywords": [
     "running",
     "fitness",
