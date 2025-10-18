@@ -1,7 +1,7 @@
-import RacePredictor from "../src/RacePredictor"
+import RacePredictor from '../src/RacePredictor'
 
-describe("RacePredictor", () => {
-  test("predictRaceTime: 3k, 18 minutes = 31 minutes", () => {
+describe('RacePredictor', () => {
+  test('predictRaceTime: 3k, 18 minutes = 31 minutes', () => {
     const predictor = new RacePredictor()
     expect(predictor.predictRaceTime(3, 18, 5)).toBeCloseTo(31, 0)
   })

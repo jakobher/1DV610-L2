@@ -1,4 +1,4 @@
-import RunningCalculator from "../src/RunningCalculator"
+import RunningCalculator from '../src/RunningCalculator'
 
 describe('RunningCalculator', () => {
   test('calculatePace: 5km in 25min = 5 min/km', () => {
