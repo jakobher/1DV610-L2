@@ -1,6 +1,6 @@
 {
   "name": "running-toolkit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "JavaScript toolkit for running calculations, fitness analysis, and training plans",
   "main": "src/RunningToolkit.js",
   "type": "module",
