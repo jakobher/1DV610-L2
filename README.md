@@ -107,7 +107,16 @@ Reflections are found in [reflektion.md](/docs/reflektion.md)
 
 ## Testing
 
-Test report is found in [testrapport.md](/docs/testrapport.md)
+### Automated Tests (Jest)
+
+Run automated unit tests:
+```bash
+npm test
+```
+
+### Manual Tests
+
+Manual test report is found in [testrapport.md](/docs/testrapport.md)
 
 ## License
 
