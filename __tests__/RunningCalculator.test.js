@@ -11,8 +11,18 @@ describe('RunningCalculator', () => {
     expect(calc.paceToSpeed(5)).toBe(12)
   })
 
-  test('Should show time based on distance and pace', () => {
-    const cals = new RunningCalculator()
-    expect(cals.calculateTime(5, 5)).toBe(25)
+  test('calculateTime: 5km at 5 min/km = 25 min', () => {
+    const calc = new RunningCalculator()
+    expect(calc.calculateTime(5, 5)).toBe(25)
+  })
+
+  test('calculateDistance: 25 min at 5 min/km = 5 km', () => {
+    const calc = new RunningCalculator()
+    expect(calc.calculateDistance(25, 5)).toBe(5)
+  })
+
+  test('formatTime: 125 min = "2 h 5 min 0 sec"', () => {
+    const calc = new RunningCalculator()
+    expect(calc.formatTime(125)).toBe('2 h 5 min 0 sec')
   })
 })
